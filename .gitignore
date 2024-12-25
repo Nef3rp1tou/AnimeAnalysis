@@ -1,0 +1,79 @@
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.swp
+
+# C extensions
+*.so
+
+# Virtual environment
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Logs and debugging
+*.log
+*.pot
+*.cache
+*.coverage
+*.cover
+.hypothesis/
+
+# MyPy
+.mypy_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# PyCharm
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# Datasets
+*.csv
+*.tsv
+*.data
+*.dat
+*.json
+
+# Other
+*.bak
+*.tmp
+*.temp
+*.out
+*.pid
+
+# Ignore environment files
+.env
+.env.*
