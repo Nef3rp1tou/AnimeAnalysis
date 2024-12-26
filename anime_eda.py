@@ -1,7 +1,7 @@
 # anime_eda.py
 import matplotlib.pyplot as plt
 import seaborn as sns
-import pandas as pd
+import plotly.express as px
 class AnimeEDA:
     def __init__(self, df):
         self.df = df
@@ -28,18 +28,22 @@ class AnimeEDA:
         plt.show()
 
     def episodes_vs_ratings(self):
-        """Scatter plot of episodes vs average rating with anime names"""
-        plt.figure(figsize=(12, 8))
-        plt.scatter(self.df['episodes'], self.df['average_rating'], color='purple', alpha=0.7, edgecolor='black')
-        for i in range(min(50, len(self.df))):  # Show names for the top 50 points
-            plt.text(self.df['episodes'].iloc[i], self.df['average_rating'].iloc[i],
-                     self.df['name'].iloc[i], fontsize=9, alpha=0.8, ha='right')
-        plt.title('Episodes vs Average Rating')
-        plt.xlabel('Number of Episodes')
-        plt.ylabel('Average Rating')
-        plt.grid(True)
-        plt.tight_layout()
-        plt.show()
+        """Interactive scatter plot using Plotly for episodes vs average rating."""
+        # Create a Plotly scatter plot
+        fig = px.scatter(
+            self.df,
+            x='episodes',
+            y='average_rating',
+            hover_data=['name'],  # Show anime names on hover
+            title='Episodes vs Average Rating',
+            labels={'episodes': 'Number of Episodes', 'average_rating': 'Average Rating'}
+        )
+
+        # Update marker size and transparency
+        fig.update_traces(marker=dict(size=8, opacity=0.7), selector=dict(mode='markers'))
+
+        # Show the figure
+        fig.show()
 
     def print_summary_statistics(self):
         """Print summary statistics for numerical columns"""
